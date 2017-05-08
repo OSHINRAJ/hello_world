@@ -1,0 +1,38 @@
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+void main()
+{ 
+  unsigned double m,n;
+  int i,j;
+  clrscr();
+  cout<<"\n PROGRAM TO FIND SQUARE ROOT \n";
+  cout<<"\n Enter a Number \n";
+  cin>>m;
+  for(i=0;i<=m;i++)
+    if(i*i<=m&&(i+1)*(i+1)>m)
+     {
+      n=i;
+      break;
+     }
+  cout<<n<<".";
+  m=(m-n*n)*100;
+  n=n*2;
+  for(j=1;j<4;j++)
+   {
+    for(i=0;m!=0;i++)
+     {
+      if((n*10+i)*i<=m&&((n*10)+(i+1))*(i+1)>m)
+      {
+       cout<<i;
+       n=(n+10)+i;
+       m=(m-(n*i))*100;
+       n=n+i;
+       break;
+      }
+     }
+    if(m==0)
+     cout<<0;
+   }
+  getch();
+} 
